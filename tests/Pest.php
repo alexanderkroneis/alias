@@ -11,7 +11,16 @@
 |
 */
 
-uses(Tests\TestCase::class)->in('Feature');
+use Illuminate\Support\Facades\File;
+
+uses(Tests\TestCase::class)
+    ->afterEach(function () {
+        File::put(
+            base_path().'/aliases.json',
+            File::get(base_path().'/stubs/aliases.json.stub')
+        );
+    })
+    ->in('Feature');
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +33,6 @@ uses(Tests\TestCase::class)->in('Feature');
 |
 */
 
-expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
-});
-
 /*
 |--------------------------------------------------------------------------
 | Functions
@@ -38,8 +43,3 @@ expect()->extend('toBeOne', function () {
 | global functions to help you to reduce the number of lines of code in your test files.
 |
 */
-
-function something()
-{
-    // ..
-}

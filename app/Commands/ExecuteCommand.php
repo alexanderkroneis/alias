@@ -22,11 +22,11 @@ class ExecuteCommand extends Command
         try {
             $this->getProjectAliases();
 
-            if ($alias && !in_array($alias, array_keys($this->aliases))) {
+            if ($alias && ! in_array($alias, array_keys($this->aliases))) {
                 $this->components->error("Alias $alias not found.");
             }
 
-            if (!$alias) {
+            if (! $alias) {
                 $alias = $this->choice('Please select alias to execute', array_keys($this->aliases));
             }
 
@@ -54,8 +54,8 @@ class ExecuteCommand extends Command
     protected function getProjectAliases(): array
     {
         $file = match (true) {
-            File::exists($path = getcwd() . '/aliases.dev.json') => File::get($path),
-            File::exists($path = getcwd() . '/aliases.json') => File::get($path),
+            File::exists($path = getcwd().'/aliases.dev.json') => File::get($path),
+            File::exists($path = getcwd().'/aliases.json') => File::get($path),
             default => throw new FileNotFoundException('aliases.json or aliases.dev.json not found.')
         };
 
