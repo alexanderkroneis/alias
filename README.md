@@ -63,7 +63,7 @@ At the moment our package looks for `aliases.dev.json` and if not exists for `al
 ## Support the development
 **Do you like this project? Support it by donating**
 
-- PayPal: [Donate](paypal.me/alexandergaal95)
+- PayPal: [Donate](https://paypal.me/alexandergaal95)
 - Patreon: [Donate](https://www.patreon.com/alexandergaal)
 
 ## License
