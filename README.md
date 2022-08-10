@@ -1,41 +1,70 @@
-<a href="https://supportukrainenow.org/"><img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg" width="100%"></a>
+<a href="https://supportukrainenow.org/">
+<img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg" width="100%">
+</a>
 
 ------
 
-<p align="center">
-    <img title="Laravel Zero" height="100" src="https://raw.githubusercontent.com/laravel-zero/docs/master/images/logo/laravel-zero-readme.png" />
-</p>
+# Alias CLI
+A PHP CLI application that helps you organize your aliases.
 
 <p align="center">
-  <a href="https://github.com/laravel-zero/framework/actions"><img src="https://img.shields.io/github/workflow/status/laravel-zero/framework/Tests.svg" alt="Build Status"></img></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/dt/laravel-zero/framework.svg" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/v/laravel-zero/framework.svg?label=stable" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/l/laravel-zero/framework.svg" alt="License"></a>
+  <a href="https://github.com/gipfel-dev/alias/actions"><img src="https://img.shields.io/github/workflow/status/gipfel-dev/alias/Tests.svg" alt="Build Status"/></a>
+  <a href="https://packagist.org/packages/gipfel-dev/alias"><img src="https://img.shields.io/packagist/dt/gipfel-dev/alias.svg" alt="Total Downloads"/></a>
+  <a href="https://packagist.org/packages/gipfel-dev/alias"><img src="https://img.shields.io/packagist/v/gipfel-dev/alias.svg?label=stable" alt="Latest Stable Version"/></a>
+  <a href="https://packagist.org/packages/gipfel-dev/alias"><img src="https://img.shields.io/packagist/l/gipfel-dev/alias.svg" alt="License"/></a>
 </p>
 
-<h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
+## Installation
+```bash
+composer require gipfel-dev/alias
+```
 
-Laravel Zero was created by [Nuno Maduro](https://github.com/nunomaduro) and [Owen Voke](https://github.com/owenvoke), and is a micro-framework that provides an elegant starting point for your console application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
+After installing Alias CLI we recommend to call the setup command once for automatically creation of `aliases.json`.
 
-- Built on top of the [Laravel](https://laravel.com) components.
-- Optional installation of Laravel [Eloquent](https://laravel-zero.com/docs/database/), Laravel [Logging](https://laravel-zero.com/docs/logging/) and many others.
-- Supports interactive [menus](https://laravel-zero.com/docs/build-interactive-menus/) and [desktop notifications](https://laravel-zero.com/docs/send-desktop-notifications/) on Linux, Windows & MacOS.
-- Ships with a [Scheduler](https://laravel-zero.com/docs/task-scheduling/) and  a [Standalone Compiler](https://laravel-zero.com/docs/build-a-standalone-application/).
-- Integration with [Collision](https://github.com/nunomaduro/collision) - Beautiful error reporting
+```bash
+./vendor/bin/alias setup
+```
 
-------
+## Usage
+### Summary
+To get an overview of all available commands you can call alias without any parameters.
+```bash
+./vendor/bin/alias
+```
 
-## Documentation
+### Execute an alias
+After defining your aliases in `aliases.json` or `aliases.dev.json` you can call
+```bash
+./vendor/bin/alias execute
+```
 
-For full documentation, visit [laravel-zero.com](https://laravel-zero.com/).
+to get an overview of all available aliases. You can also call an alias directly:
+
+```bash
+./vendor/bin/alias execute {alias}
+```
+
+## aliases.json
+At the moment our package looks for `aliases.dev.json` and if not exists for `aliases.json`. Run `./vendor/bin/alias setup` for automatically creating a `aliases.json` file. Please be aware that your values must be executable by your terminal.
+
+### Allowed schema
+```json
+{
+  "about": "echo 'This is allowed.'",
+  
+  "update": [
+    "echo 'This is also allowed'",
+    "composer update",
+    "npm update"
+  ] 
+}
+```
 
 ## Support the development
 **Do you like this project? Support it by donating**
 
-- PayPal: [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L)
-- Patreon: [Donate](https://www.patreon.com/nunomaduro)
+- PayPal: [Donate](paypal.me/alexandergaal95)
+- Patreon: [Donate](https://www.patreon.com/alexandergaal)
 
 ## License
-
-Laravel Zero is an open-source software licensed under the MIT license.
-# alias
+Alias CLI is an open-source software licensed under the MIT license.
