@@ -20,7 +20,7 @@ uses(Tests\TestCase::class)
             File::get(base_path().'/stubs/aliases.json.stub')
         );
     })
-    ->in('Feature');
+    ->in('Unit');
 
 /*
 |--------------------------------------------------------------------------
