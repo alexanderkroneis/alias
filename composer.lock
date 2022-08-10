@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "056c9ce2dd148e1557ab8720fb77c5e4",
+    "content-hash": "d39fa500b66d4242f6938a89b51bc90d",
     "packages": [
         {
             "name": "laravel-zero/phar-updater",

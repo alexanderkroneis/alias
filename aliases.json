@@ -1,3 +1,8 @@
 {
-  "update": "composer update"
+  "about": [
+    "echo 'A PHP CLI application that helps you organize your aliases.'"
+  ],
+  "update": [
+    "composer update"
+  ]
 }
