@@ -8,7 +8,7 @@ use LaravelZero\Framework\Commands\Command;
 
 class ExecuteCommand extends Command
 {
-    protected $signature = 'execute {alias?} {-q|--quiet}';
+    protected $signature = 'execute {alias?}';
 
     protected $description = 'Executes an alias.';
 
@@ -40,7 +40,7 @@ class ExecuteCommand extends Command
                 if ($quiet) {
                     @shell_exec($task);
                 } else {
-                    shell_exec($task);
+                    $this->components->info(shell_exec($task));
                 }
             }
 
