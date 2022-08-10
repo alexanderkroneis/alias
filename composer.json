@@ -1,0 +1,49 @@
+{
+    "name": "gipfel-dev/alias",
+    "description": "A PHP CLI application that helps you organize your aliases.",
+    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
+    "homepage": "https://laravel-zero.com",
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/gipfel-dev/alias/issues",
+        "source": "https://github.com/gipfel-dev/alias"
+    },
+    "authors": [
+        {
+            "name": "Alexander Gaal",
+            "email": "alexander.gaal@gipfel.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel-zero/phar-updater": "^1.2"
+    },
+    "require-dev": {
+        "laravel-zero/framework": "^9.0",
+        "laravel/pint": "^0.2.0",
+        "mockery/mockery": "^1.4.4",
+        "pestphp/pest": "^1.21.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": ["builds/alias"]
+}
