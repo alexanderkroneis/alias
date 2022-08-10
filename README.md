@@ -21,44 +21,32 @@ composer require gipfel-dev/alias
 
 After installing Alias CLI we recommend to call the setup command once for automatically creation of `aliases.json`.
 
-```bash
-./vendor/bin/alias setup
-```
+<img src="./docs/images/setup-example.png" width="400px"/>
 
 ## Usage
 ### Summary
 To get an overview of all available commands you can call alias without any parameters.
-```bash
-./vendor/bin/alias
-```
+
+<img src="./docs/images/summary-example.png" width="400px"/>
 
 ### Execute an alias
 After defining your aliases in `aliases.json` or `aliases.dev.json` you can call
-```bash
-./vendor/bin/alias execute
-```
+
+<img src="./docs/images/execute-example.png" width="400px"/>
 
 to get an overview of all available aliases. You can also call an alias directly:
 
-```bash
-./vendor/bin/alias execute {alias}
-```
+<img src="./docs/images/execute-with-alias-example.png" width="400px"/>
 
 ## aliases.json
-At the moment our package looks for `aliases.dev.json` and if not exists for `aliases.json`. Run `./vendor/bin/alias setup` for automatically creating a `aliases.json` file. Please be aware that your values must be executable by your terminal.
+At the moment our packages scans your root directory of your project for following files
+- `aliases.dev.json`
+- `aliases.json`
 
-### Allowed schema
-```json
-{
-  "about": "echo 'This is allowed.'",
-  
-  "update": [
-    "echo 'This is also allowed'",
-    "composer update",
-    "npm update"
-  ] 
-}
-```
+Please be aware that your values must be executable by your terminal.
+
+### `aliases.json` example
+<img src="./docs/images/aliases-example.png" width="400px"/>
 
 ## Support the development
 **Do you like this project? Support it by donating**
