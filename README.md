@@ -8,15 +8,15 @@
 A PHP CLI application that helps you organize your aliases.
 
 <p align="center">
-  <a href="https://github.com/gipfel-dev/alias/actions"><img src="https://img.shields.io/github/workflow/status/gipfel-dev/alias/Tests.svg" alt="Build Status"/></a>
-  <a href="https://packagist.org/packages/gipfel-dev/alias"><img src="https://img.shields.io/packagist/dt/gipfel-dev/alias.svg" alt="Total Downloads"/></a>
-  <a href="https://packagist.org/packages/gipfel-dev/alias"><img src="https://img.shields.io/packagist/v/gipfel-dev/alias.svg?label=stable" alt="Latest Stable Version"/></a>
-  <a href="https://packagist.org/packages/gipfel-dev/alias"><img src="https://img.shields.io/packagist/l/gipfel-dev/alias.svg" alt="License"/></a>
+  <a href="https://github.com/alexgaal/alias/actions"><img src="https://img.shields.io/github/workflow/status/alexgaal/alias/Tests.svg" alt="Build Status"/></a>
+  <a href="https://packagist.org/packages/alexgaal/alias"><img src="https://img.shields.io/packagist/dt/alexgaal/alias.svg" alt="Total Downloads"/></a>
+  <a href="https://packagist.org/packages/alexgaal/alias"><img src="https://img.shields.io/packagist/v/alexgaal/alias.svg?label=stable" alt="Latest Stable Version"/></a>
+  <a href="https://packagist.org/packages/alexgaal/alias"><img src="https://img.shields.io/packagist/l/alexgaal/alias.svg" alt="License"/></a>
 </p>
 
 ## Installation
 ```bash
-composer require gipfel-dev/alias
+composer require --dev alexgaal/alias
 ```
 
 After installing Alias CLI we recommend to call the setup command once for automatically creation of `aliases.json`.
