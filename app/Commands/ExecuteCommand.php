@@ -47,9 +47,9 @@ class ExecuteCommand extends Command
                 }
 
                 if ($silent) {
-                    @shell_exec($task);
+                    @system($task);
                 } else {
-                    $this->components->info(shell_exec($task));
+                    $this->line(system($task));
                 }
             }
 
