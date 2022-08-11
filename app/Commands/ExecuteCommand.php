@@ -8,7 +8,7 @@ use LaravelZero\Framework\Commands\Command;
 
 class ExecuteCommand extends Command
 {
-    protected $signature = 'execute {alias?}';
+    protected $signature = 'execute {alias?} {parameters?*}';
 
     protected $description = 'Executes an alias.';
 
@@ -18,6 +18,7 @@ class ExecuteCommand extends Command
     {
         $alias = $this->argument('alias');
         $quiet = $this->option('quiet') ?? false;
+        $parameters = $this->argument('parameters');
 
         try {
             $this->getProjectAliases();
@@ -37,6 +38,14 @@ class ExecuteCommand extends Command
             }
 
             foreach ($this->aliases[$alias] as $task) {
+                if ($parameters) {
+                    $task = sprintf(
+                        '%s %s',
+                        $task,
+                        implode(' ', $parameters)
+                    );
+                }
+
                 if ($quiet) {
                     @shell_exec($task);
                 } else {
