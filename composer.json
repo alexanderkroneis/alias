@@ -1,13 +1,13 @@
 {
-    "name": "gipfel-dev/alias",
+    "name": "alexgaal/alias",
     "description": "A PHP CLI application that helps you organize your aliases.",
     "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
     "homepage": "https://gipfel.dev/packages/alias",
     "type": "project",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/gipfel-dev/alias/issues",
-        "source": "https://github.com/gipfel-dev/alias"
+        "issues": "https://github.com/alexgaal/alias/issues",
+        "source": "https://github.com/alexgaal/alias"
     },
     "authors": [
         {
