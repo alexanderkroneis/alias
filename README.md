@@ -16,7 +16,7 @@ A PHP CLI application that helps you organize your aliases.
 
 ## Installation
 ```bash
-composer require alexgaal/alias
+composer require --dev alexgaal/alias
 ```
 
 After installing Alias CLI we recommend to call the setup command once for automatically creation of `aliases.json`.
