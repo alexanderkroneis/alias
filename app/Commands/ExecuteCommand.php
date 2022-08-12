@@ -8,7 +8,7 @@ use LaravelZero\Framework\Commands\Command;
 
 class ExecuteCommand extends Command
 {
-    protected $signature = 'execute {alias?} {parameters?*} {-s|--silent=false}';
+    protected $signature = 'execute {alias?} {parameters?*} {-s|--silent}';
 
     protected $description = 'Executes an alias.';
 
@@ -23,15 +23,17 @@ class ExecuteCommand extends Command
         try {
             $this->getProjectAliases();
 
-            if ($alias && ! in_array($alias, array_keys($this->aliases))) {
+            if ($alias && !in_array($alias, array_keys($this->aliases))) {
                 $this->components->error("Alias $alias not found.");
             }
 
-            if (! $alias) {
+            if (!$alias) {
                 $alias = $this->choice('Please select alias to execute', array_keys($this->aliases));
             }
 
-            $this->components->info("Executing: $alias");
+            if (!$silent) {
+                $this->components->info("Executing: $alias");
+            }
 
             if (is_array($this->aliases[$alias]) === false) {
                 $this->aliases[$alias] = [$this->aliases[$alias]];
@@ -46,15 +48,17 @@ class ExecuteCommand extends Command
                     );
                 }
 
-                if ($silent) {
-                    @system($task);
-                } else {
-                    $this->line(system($task));
+                $output = exec($task);
+
+                if (!$silent) {
+                    $this->line($output);
                 }
             }
 
-            $this->newLine();
-            $this->components->info('Finished.');
+            if (!$silent) {
+                $this->newLine();
+                $this->components->info('Finished.');
+            }
         } catch (\Exception $exception) {
             $this->components->error($exception->getMessage());
         }
@@ -63,8 +67,8 @@ class ExecuteCommand extends Command
     protected function getProjectAliases(): array
     {
         $file = match (true) {
-            File::exists($path = getcwd().'/aliases.dev.json') => File::get($path),
-            File::exists($path = getcwd().'/aliases.json') => File::get($path),
+            File::exists($path = getcwd() . '/aliases.dev.json') => File::get($path),
+            File::exists($path = getcwd() . '/aliases.json') => File::get($path),
             default => throw new FileNotFoundException('aliases.json or aliases.dev.json not found.')
         };
 
