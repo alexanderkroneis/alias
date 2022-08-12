@@ -45,5 +45,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["alias"]
+    "bin": ["builds/alias"]
 }
