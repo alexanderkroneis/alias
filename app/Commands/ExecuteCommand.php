@@ -67,8 +67,8 @@ class ExecuteCommand extends Command
     protected function getProjectAliases(): array
     {
         $file = match (true) {
-            File::exists($path = getcwd() . '/aliases.dev.json') => File::get($path),
-            File::exists($path = getcwd() . '/aliases.json') => File::get($path),
+            File::exists($path = getcwd() . DIRECTORY_SEPARATOR . 'aliases.dev.json') => File::get($path),
+            File::exists($path = getcwd() . DIRECTORY_SEPARATOR . 'aliases.json') => File::get($path),
             default => throw new FileNotFoundException('aliases.json or aliases.dev.json not found.')
         };
 
